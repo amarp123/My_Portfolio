@@ -1,0 +1,27 @@
+{
+  "expo": {
+    "name": "MindLockApp",
+    "slug": "mindlockapp",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "version": "1.0.0",
+    "android": {
+      "permissions": [
+        "CAMERA"
+      ],
+      "package": "com.amarpujari.mindlockapp"
+    },
+    "ios": {
+      "infoPlist": {
+        "NSCameraUsageDescription": "This app requires camera access to detect push-ups."
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "90550531-fc5e-4926-9fe0-76211daae626"
+      }
+    }
+  }
+}
