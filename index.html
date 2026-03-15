@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amar Pujari — Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --orange: #f5a623;
+      --orange-dark: #e0941a;
+      --blue: #4e6fd4;
+      --blue-light: #6b8ae8;
+      --bg: #eef2fb;
+      --white: #ffffff;
+      --text: #1e1e2e;
+      --muted: #6b7280;
+      --card-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+      --radius: 22px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 88%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ── HERO SECTION GRADIENT BG ── */
+    #hero-wrapper {
+      background: linear-gradient(135deg, #e8eaf6 0%, #f0f4ff 40%, #e8f4fd 70%, #f5f0ff 100%);
+      border-radius: 32px;
+      width: 94%;
+      max-width: 1320px;
+      margin: 0 auto 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      background: var(--white);
+      border-radius: 50px;
+      padding: 14px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.07);
+      margin: 24px auto;
+      width: 88%;
+      max-width: 1200px;
+      position: sticky;
+      top: 14px;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 34px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .contact-btn {
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 11px 28px;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .contact-btn:hover {
+      background: var(--orange-dark);
+      transform: translateY(-1px);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 60px 6% 70px;
+      min-height: 88vh;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hero-left {
+      flex: 1;
+      max-width: 480px;
+    }
+
+    .hero-greeting {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 7px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--orange);
+      box-shadow: 0 4px 14px rgba(245, 166, 35, 0.18);
+      margin-bottom: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-greeting .dot {
+      width: 7px;
+      height: 7px;
+      background: var(--orange);
+      border-radius: 50%;
+      animation: blink 1.4s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0.3
+      }
+    }
+
+    .hero-left h1 {
+      font-size: 60px;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      color: #1a1a2e;
+    }
+
+    .hero-left h1 .name {
+      color: var(--orange);
+      display: block;
+    }
+
+    .hero-left .tagline {
+      margin-top: 18px;
+      font-size: 14.5px;
+      font-weight: 400;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 400px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 22px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .stat-num span {
+      color: var(--orange);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .stat-divider {
+      width: 1px;
+      height: 40px;
+      background: #ddd;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    .btn-hire {
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 14px 38px;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(245, 166, 35, 0.45);
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-hire:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(245, 166, 35, 0.55);
+    }
+
+    .btn-cv {
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--text);
+      border: 2px solid #e5e7eb;
+      padding: 13px 28px;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      transition: border-color 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-cv:hover {
+      border-color: var(--orange);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .skill-tags {
+      display: flex;
+      gap: 8px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.75);
+      border: 1.5px solid #e5e7eb;
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+      transition: border-color 0.2s, background 0.2s;
+      backdrop-filter: blur(4px);
+    }
+
+    .tag:hover {
+      border-color: var(--orange);
+      background: #fff8ec;
+      color: var(--orange);
+    }
+
+    /* ── HERO RIGHT (Photo) ── */
+    .hero-right {
+      flex: 0 0 520px;
+      position: relative;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Big yellow organic blob */
+    .bg-blob-yellow {
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      background: #f9c74f;
+      border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-54%, -50%);
+      z-index: 0;
+      animation: blobMorph 8s ease-in-out infinite;
+    }
+
+    @keyframes blobMorph {
+
+      0%,
+      100% {
+        border-radius: 60% 40% 55% 45% / 45% 55% 40% 60%;
+      }
+
+      33% {
+        border-radius: 50% 50% 40% 60% / 60% 40% 55% 45%;
+      }
+
+      66% {
+        border-radius: 40% 60% 60% 40% / 50% 50% 50% 50%;
+      }
+    }
+
+    /* Blue blob top-right — vibrant teardrop with glow */
+    .bg-blob-blue {
+      position: absolute;
+      width: 220px;
+      height: 260px;
+      background: linear-gradient(145deg, #6b8ae8, #3a58c4);
+      border-radius: 65% 35% 55% 45% / 55% 65% 35% 45%;
+      top: 10px;
+      right: 10px;
+      z-index: 0;
+      box-shadow: 0 16px 48px rgba(78, 111, 212, 0.45), 0 0 60px rgba(107, 138, 232, 0.2);
+      animation: blobMorphBlue 9s ease-in-out infinite;
+    }
+
+    @keyframes blobMorphBlue {
+
+      0%,
+      100% {
+        border-radius: 65% 35% 55% 45% / 55% 65% 35% 45%;
+      }
+
+      40% {
+        border-radius: 45% 55% 65% 35% / 65% 35% 55% 45%;
+      }
+
+      70% {
+        border-radius: 55% 45% 35% 65% / 45% 55% 65% 35%;
+      }
+    }
+
+    /* Photo — circular framed, centered on blob */
+    .hero-photo-wrap {
+      position: relative;
+      z-index: 2;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      /* Outer glow ring */
+      background: linear-gradient(135deg, var(--orange) 0%, #ffcc70 50%, var(--blue-light) 100%);
+      padding: 5px;
+      box-shadow:
+        0 0 0 10px rgba(245, 166, 35, 0.15),
+        0 0 0 20px rgba(245, 166, 35, 0.06),
+        0 20px 50px rgba(0, 0, 0, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* White inner ring */
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border-radius: 50%;
+      border: 4px solid white;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .hero-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 50%;
+      display: block;
+    }
+
+    /* Floating decorations */
+    .f-deco {
+      position: absolute;
+      z-index: 5;
+      animation: floatUD 3s ease-in-out infinite;
+    }
+
+    .fd-star-green {
+      top: 20px;
+      right: 30px;
+      font-size: 38px;
+      animation-delay: 0s;
+      filter: drop-shadow(0 4px 10px rgba(0, 200, 80, 0.3));
+    }
+
+    .fd-star-teal1 {
+      bottom: 80px;
+      left: 20px;
+      font-size: 28px;
+      animation-delay: 0.5s;
+      color: #00c8c8;
+    }
+
+    .fd-star-teal2 {
+      bottom: 30px;
+      left: 100px;
+      font-size: 20px;
+      animation-delay: 1s;
+      color: #00c8c8;
+    }
+
+    .fd-emoji {
+      top: 90px;
+      left: 140px;
+      font-size: 42px;
+      animation-delay: 0.2s;
+    }
+
+    .fd-dot-yellow {
+      bottom: 50px;
+      right: 40px;
+      width: 20px;
+      height: 20px;
+      background: #f9c74f;
+      border-radius: 50%;
+      animation-delay: 0.7s;
+    }
+
+    @keyframes floatUD {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-12px)
+      }
+    }
+
+    /* Floating white cards */
+    .hero-card {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 16px;
+      padding: 12px 18px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.10);
+      z-index: 6;
+      backdrop-filter: blur(10px);
+      animation: floatUD 4s ease-in-out infinite;
+    }
+
+    .hero-card-tr {
+      top: 60px;
+      right: 10px;
+      width: 140px;
+      height: 52px;
+      animation-delay: 0.3s;
+      border-radius: 14px;
+    }
+
+    .hero-card-award {
+      bottom: 60px;
+      right: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      animation-delay: 1s;
+    }
+
+    .award-icon {
+      font-size: 28px;
+    }
+
+    .award-text .t1 {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .award-text .t2 {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .ifl-label {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .ifl-value {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    /* ── SECTION HELPERS ── */
+    .section-eyebrow {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--orange);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+
+    .section-title span {
+      color: var(--orange);
+    }
+
+    .section-sub {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── SERVICES ── */
+    .services-section {
+      padding: 80px 0 60px;
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 46px;
+    }
+
+    .services-header .section-sub {
+      margin: 10px auto 24px;
+    }
+
+    .btn-download {
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.15s;
+
+    }
+
+    .btn-download:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+    }
+
+    /* Featured card */
+    .svc-featured {
+      background: linear-gradient(135deg, #1e1e2e, #2a2a45);
+      border-radius: var(--radius);
+      padding: 40px;
+      color: white;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 24px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .svc-featured:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 60px rgba(20, 20, 40, 0.3);
+    }
+
+    .svc-featured .glow1 {
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      background: var(--orange);
+      border-radius: 50%;
+      opacity: 0.07;
+      top: -100px;
+      right: -60px;
+    }
+
+    .svc-featured .glow2 {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      background: var(--blue-light);
+      border-radius: 50%;
+      opacity: 0.08;
+      bottom: -70px;
+      left: 100px;
+    }
+
+    .svc-feat-icon {
+      font-size: 60px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .svc-feat-body {
+      position: relative;
+      z-index: 1;
+    }
+
+    .svc-feat-body h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .svc-feat-body p {
+      font-size: 14px;
+      opacity: 0.75;
+      line-height: 1.75;
+      max-width: 600px;
+    }
+
+    .feat-tags {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .feat-tags span {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 4px 14px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Grid of 4 equal cards */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+      margin-bottom: 24px;
+    }
+
+    .svc-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 30px 24px;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+
+    .svc-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--orange), #ffcc70);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+      border-radius: 4px 4px 0 0;
+    }
+
+    .svc-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .svc-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.13);
+    }
+
+    .svc-icon-box {
+      width: 54px;
+      height: 54px;
+      background: #fff3dd;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      margin-bottom: 16px;
+    }
+
+    .svc-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .svc-card p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .svc-tags {
+      display: flex;
+      gap: 5px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+
+    .svc-tag {
+      background: #f3f4f6;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 50px;
+      color: #555;
+    }
+
+    .learn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 14px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--orange);
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+
+    .learn-link:hover {
+      gap: 8px;
+    }
+
+    /* Process strip */
+    .process-strip {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .process-strip h3 {
+      font-size: 20px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .process-strip h3 span {
+      color: var(--orange);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 24px;
+      left: 12.5%;
+      right: 12.5%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--orange), var(--blue-light));
+      z-index: 0;
+    }
+
+    .process-step {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 48px;
+      height: 48px;
+      background: white;
+      border: 3px solid var(--orange);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--orange);
+      margin: 0 auto 14px;
+      box-shadow: 0 4px 14px rgba(245, 166, 35, 0.25);
+    }
+
+    .process-step h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .process-step p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-section {
+      padding: 70px 0 80px;
+    }
+
+    .projects-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .projects-header .section-sub {
+      margin: 10px auto 0;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 22px;
+      border-radius: 50px;
+      border: 2px solid #e5e7eb;
+      background: white;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--muted);
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: white;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* All cards are equal — no wide spans */
+
+    .proj-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+      position: relative;
+      cursor: pointer;
+      background: white;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .proj-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.16);
+    }
+
+    .proj-thumb {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* Real image inside thumb */
+    .proj-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.4s;
+      display: block;
+    }
+
+    .proj-card:hover .proj-thumb img {
+      transform: scale(1.07);
+    }
+
+    /* Gradient fallback shown when no image */
+    .proj-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.92);
+      gap: 10px;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    /* Hide fallback when real image loads */
+    .proj-thumb img.loaded+.proj-fallback,
+    .proj-thumb img:not([src=''])+.proj-fallback {
+      display: none;
+    }
+
+    .proj-fallback .pf-icon {
+      font-size: 38px;
+    }
+
+    .proj-fallback .pf-name {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .g1 {
+      background: linear-gradient(135deg, #56ab91, #1a5c49)
+    }
+
+    .g2 {
+      background: linear-gradient(135deg, #f8854a, #c0400f)
+    }
+
+    .g3 {
+      background: linear-gradient(135deg, #667eea, #3344c0)
+    }
+
+    .g4 {
+      background: linear-gradient(135deg, #f857a6, #a8001b)
+    }
+
+    .g5 {
+      background: linear-gradient(135deg, #4facfe, #0062cc)
+    }
+
+    .g6 {
+      background: linear-gradient(135deg, #43e97b, #0e7a3a)
+    }
+
+    .g7 {
+      background: linear-gradient(135deg, #fa709a, #e8a000)
+    }
+
+    .g8 {
+      background: linear-gradient(135deg, #a18cd1, #3a1f80)
+    }
+
+    /* Hover overlay */
+    .proj-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(12, 12, 28, 0.87);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 2;
+      backdrop-filter: blur(4px);
+    }
+
+    .proj-card:hover .proj-overlay {
+      opacity: 1;
+    }
+
+    .proj-ov-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      padding: 0 16px;
+      margin-bottom: 4px;
+    }
+
+    .proj-link-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    .proj-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s;
+    }
+
+    .proj-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .proj-link.live {
+      background: var(--orange);
+      color: white;
+      box-shadow: 0 4px 14px rgba(245, 166, 35, 0.4);
+    }
+
+    .proj-link.github {
+      background: rgba(255, 255, 255, 0.13);
+      color: white;
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .proj-link.github:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .proj-info {
+      padding: 18px 20px 20px;
+      background: white;
+    }
+
+    .proj-info-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 6px;
+    }
+
+    .proj-info h4 {
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .proj-badge {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
+      letter-spacing: 0.4px;
+    }
+
+    .b-web {
+      background: #e8f4ff;
+      color: #2563eb;
+    }
+
+    .b-ai {
+      background: #fef3e8;
+      color: #d97706;
+    }
+
+    .b-fs {
+      background: #f0fdf4;
+      color: #16a34a;
+    }
+
+    .proj-info p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .proj-tech {
+      display: flex;
+      gap: 6px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tech-chip {
+      background: #f3f4f6;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 50px;
+      color: #555;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: linear-gradient(135deg, #1e1e2e, #2e2e50);
+      border-radius: 28px;
+      padding: 70px 60px;
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section::before {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: var(--orange);
+      border-radius: 50%;
+      opacity: 0.05;
+      top: -150px;
+      right: -100px;
+    }
+
+    .contact-section::after {
+      content: '';
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      background: var(--blue-light);
+      border-radius: 50%;
+      opacity: 0.07;
+      bottom: -100px;
+      left: 200px;
+    }
+
+    .contact-left {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-left h2 {
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .contact-left h2 span {
+      color: var(--orange);
+    }
+
+    .contact-left p {
+      font-size: 14px;
+      opacity: 0.75;
+      line-height: 1.7;
+      margin-bottom: 26px;
+    }
+
+    .ci-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .ci-icon {
+      width: 38px;
+      height: 38px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .contact-socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .soc-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      background: transparent;
+      color: rgba(255, 255, 255, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+
+    .soc-btn:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .contact-form {
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.09);
+      border: 1.5px solid rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      color: white;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(255, 255, 255, 0.35);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--orange);
+      background: rgba(255, 255, 255, 0.13);
+    }
+
+    .form-group textarea {
+      resize: none;
+      height: 108px;
+    }
+
+    .btn-send {
+      width: 100%;
+      background: var(--orange);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 14px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .btn-send:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--white);
+      padding: 36px 0 24px;
+      box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .footer-inner {
+      width: 88%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 28px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      color: var(--orange);
+    }
+
+    .foot-soc {
+      display: flex;
+      gap: 12px;
+    }
+
+    .fs-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid #e0e0e0;
+      background: white;
+      color: #555;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .fs-btn:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: white;
+    }
+
+    .footer-divider {
+      height: 1px;
+      background: #f0f0f0;
+      margin: 20px 0;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--muted);
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    /* ── SCROLL TOP ── */
+    .scroll-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 46px;
+      height: 46px;
+      background: var(--orange);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(245, 166, 35, 0.4);
+      transition: transform 0.2s, opacity 0.3s;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-3px);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1100px) {
+      .svc-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-steps::before {
+        display: none;
+      }
+    }
+
+    @media(max-width:900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 0 50px;
+        min-height: auto;
+      }
+
+      .hero-left {
+        max-width: 100%;
+      }
+
+      .hero-about {
+        text-align: left;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero-btns {
+        justify-content: center;
+      }
+
+      .hero-right {
+        flex: none;
+        width: 100%;
+        height: 420px;
+      }
+
+      .contact-section {
+        grid-template-columns: 1fr;
+        padding: 40px 30px;
+      }
+    }
+
+    @media(max-width:600px) {
+      .hero-left h1 {
+        font-size: 38px;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .svc-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+    }
+
+    /* ── ACHIEVEMENTS ── */
+    .achievements-section {
+      padding: 70px 0 80px;
+      overflow: hidden;
+    }
+
+    .achievements-header {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    /* Marquee track wrapper — clips overflow */
+    .marquee-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    /* Fade masks on edges */
+    .marquee-wrapper::before,
+    .marquee-wrapper::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .marquee-wrapper::before {
+      left: 0;
+      background: linear-gradient(to right, var(--bg), transparent);
+    }
+
+    .marquee-wrapper::after {
+      right: 0;
+      background: linear-gradient(to left, var(--bg), transparent);
+    }
+
+    /* The scrolling track */
+    .marquee-track {
+      display: flex;
+      gap: 22px;
+      width: max-content;
+      animation: marqueeScroll 28s linear infinite;
+    }
+
+    /* Pause on hover */
+    .marquee-wrapper:hover .marquee-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes marqueeScroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Individual achievement photo card */
+    .ach-card {
+      flex-shrink: 0;
+      width: 340px;
+      height: 230px;
+      border-radius: 22px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 10px 36px rgba(0, 0, 0, 0.10);
+      border: 3px solid white;
+      background: #f0f4ff;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .ach-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+    }
+
+    .ach-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.4s;
+    }
+
+    .ach-card:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Caption overlay */
+    .ach-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.72), transparent);
+      color: white;
+      padding: 22px 14px 12px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      line-height: 1.3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Personal.</div>
+      <div class="nav-links">
+        <a href="#hero" class="active">Home</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="contact-btn"
+        onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Us</button>
+    </nav>
+  </header>
+
+  <div id="hero-wrapper">
+
+    <!-- ═══ HERO ═══ -->
+    <section class="hero" id="hero">
+      <div class="hero-left">
+        <div class="hero-greeting">
+          <div class="dot"></div>Available for Work
+        </div>
+
+        <h1>Hy! I Am<br><span class="name">Amar Pujari</span></h1>
+
+        <p class="tagline">Full Stack Developer &amp; UI/UX Designer crafting modern web applications, AI-powered
+          products, and scalable digital systems that create real-world impact.</p>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">8<span>+</span></div>
+            <div class="stat-label">Projects</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-num">2<span>+</span></div>
+            <div class="stat-label">Years Exp.</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-num">15<span>+</span></div>
+            <div class="stat-label">Tech Stack</div>
+          </div>
+        </div>
+
+        <div class="hero-btns">
+          <button class="btn-hire" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Hire
+            Me</button>
+          <a href="assets/cv/Amar Pujari.pdf" download class="btn-cv">
+            ⬇ Download CV
+          </a>
+        </div>
+
+        <div class="skill-tags">
+          <span class="tag">React.js</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Python</span>
+          <span class="tag">MongoDB</span>
+          <span class="tag">AI / ML</span>
+          <span class="tag">Figma</span>
+        </div>
+      </div>
+
+      <!-- Hero Right: Photo on organic blobs -->
+      <div class="hero-right">
+        <!-- Background blobs -->
+        <div class="bg-blob-yellow"></div>
+        <div class="bg-blob-blue"></div>
+
+        <!-- Floating decorations -->
+        <div class="f-deco fd-star-green">⭐</div>
+        <div class="f-deco fd-star-teal1">★</div>
+        <div class="f-deco fd-star-teal2">★</div>
+        <div class="f-deco fd-star-green">⭐</div>
+        <div class="f-deco fd-star-teal1">★</div>
+        <div class="f-deco fd-star-teal2">★</div>
+        <div class="f-deco fd-emoji">🎅</div>
+        <div class="f-deco fd-dot-yellow"></div>
+
+        <!-- Floating blank white card (top-right) -->
+
+
+        <!-- Person photo -->
+        <div class="hero-photo-wrap">
+          <img src="assets/images/IMG20250502123712_1_-removebg-preview (1).png" alt="Amar Pujari" id="heroPhoto" />
+        </div>
+
+        <!-- Best Design Award card (bottom-right) -->
+        <div class="hero-card hero-card-award">
+          <div class="award-icon">🏅</div>
+          <div class="award-text">
+            <div class="t1">Best Design</div>
+            <div class="t2">Awardr</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICES ═══ -->
+    <section class="services-section" id="services">
+      <div class="services-header">
+        <div class="section-eyebrow">What I Do</div>
+        <h2 class="section-title">My Awesome <span>Services</span></h2>
+        <p class="section-sub">End-to-end solutions — from wireframe to deployment. I build things that look great and
+          work even better.</p>
+        <div style="margin-top:22px;display:flex;justify-content:center;">
+          <a href="assets/cv/Amar Pujari.pdf" download>
+            <button class="btn-download">
+              <i class="fas fa-download"></i> Download CV
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <!-- Featured large card -->
+      <div class="svc-featured">
+        <div class="glow1"></div>
+        <div class="glow2"></div>
+        <div class="svc-feat-icon">🖥️</div>
+        <div class="svc-feat-body">
+          <h3>Full Stack Web Development</h3>
+          <p>Building complete web applications from database to user interface. I architect scalable, secure backends
+            with Node.js, Express and MongoDB, paired with fast, responsive React frontends that users love to use every
+            day.</p>
+          <div class="feat-tags">
+            <span>React.js</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>REST
+              APIs</span><span>JWT Auth</span><span>TypeScript</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 equal cards -->
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-icon-box">🎨</div>
+          <h3>UI / UX Design</h3>
+          <p>Pixel-perfect interfaces built in Figma — wireframes, hi-fi prototypes, design systems and responsive
+            layouts that truly delight users.</p>
+          <div class="svc-tags"><span class="svc-tag">Figma</span><span class="svc-tag">Prototyping</span><span
+              class="svc-tag">Design Systems</span></div>
+          <a class="learn-link" href="#">LEARN MORE →</a>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon-box">🤖</div>
+          <h3>AI Integration</h3>
+          <p>Embedding AI into real products — intelligent chatbots, recommendation engines and smart automations
+            powered by Python &amp; OpenAI APIs.</p>
+          <div class="svc-tags"><span class="svc-tag">Python</span><span class="svc-tag">OpenAI</span><span
+              class="svc-tag">LangChain</span></div>
+          <a class="learn-link" href="#">LEARN MORE →</a>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon-box">⚡</div>
+          <h3>API Development</h3>
+          <p>Robust RESTful &amp; GraphQL APIs with proper auth, rate limiting, validation and comprehensive Swagger
+            documentation.</p>
+          <div class="svc-tags"><span class="svc-tag">REST</span><span class="svc-tag">GraphQL</span><span
+              class="svc-tag">Postman</span></div>
+          <a class="learn-link" href="#">LEARN MORE →</a>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon-box">☁️</div>
+          <h3>Deploy &amp; DevOps</h3>
+          <p>CI/CD pipelines, Docker containerisation, and smooth deployment to Vercel, Netlify, Render and AWS for
+            zero-downtime launches.</p>
+          <div class="svc-tags"><span class="svc-tag">Docker</span><span class="svc-tag">AWS</span><span
+              class="svc-tag">Vercel</span></div>
+          <a class="learn-link" href="#">LEARN MORE →</a>
+        </div>
+      </div>
+
+      <!-- Process -->
+      <div class="process-strip">
+        <h3>My <span>Work Process</span> — Simple &amp; Effective</h3>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-num">01</div>
+            <h4>Discovery</h4>
+            <p>Deep-dive into your goals, target audience and technical constraints.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">02</div>
+            <h4>Design</h4>
+            <p>Wireframes and high-fidelity prototypes, refined with your feedback.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">03</div>
+            <h4>Develop</h4>
+            <p>Clean, tested, documented code following modern best practices.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-num">04</div>
+            <h4>Launch</h4>
+            <p>Deploy with CI/CD, monitor performance, and provide ongoing support.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ PROJECTS ═══ -->
+    <section class="projects-section" id="projects">
+      <div class="projects-header">
+        <div class="section-eyebrow">My Work</div>
+        <h2 class="section-title">Recent <span>Projects</span></h2>
+        <p class="section-sub">8 projects built with passion. <strong>Hover any card</strong> to see the Live Demo &amp;
+          GitHub links.</p>
+        <div class="filter-tabs">
+          <button class="filter-btn active" onclick="filterProjects('all',this)">All</button>
+          <button class="filter-btn" onclick="filterProjects('web',this)">Web App</button>
+          <button class="filter-btn" onclick="filterProjects('ai',this)">AI / ML</button>
+          <button class="filter-btn" onclick="filterProjects('fs',this)">Full Stack</button>
+        </div>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+
+        <!-- 1 -->
+        <div class="proj-card" data-cat="fs">
+          <div class="proj-thumb">
+            <img src="assets/images/Screenshot (151).png" alt="E-Commerce Platform" onerror="this.style.display='none'">
+            <div class="proj-fallback g1">
+              <div class="pf-icon">🛒</div>
+              <div class="pf-name">Krishivaani</div>
+            </div>
+          </div>
+          <div class="proj-overlay">
+            <div class="proj-ov-title">Krishivaani AI Powered Farming Assistsnt</div>
+            <div class="proj-link-row">
+              <a href="#" class="proj-link live" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/amarpujari" class="proj-link github" target="_blank"><i
+                  class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-info-top">
+              <h4>Smart Farming Assistant</h4>
+              <span class="proj-badge b-fs">AI/ML</span>
+            </div>
+            <p>Disease Diagnosis, Crop Recommendation, Weather Forecasting, Market Price Prediction, Soil Analysis,
+              Crop Recommendation, Weather Forecasting, Market Price Prediction, Soil Analysis,
+            </p>
+            <div class="proj-tech">
+              <span class="tech-chip">React</span><span class="tech-chip">Node.js</span><span
+                class="tech-chip">MongoDB</span><span class="tech-chip">Express.js</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="proj-card" data-cat="ai">
+          <div class="proj-thumb">
+            <img src="assets/images/Screenshot (195).png" alt="AI Chatbot App" onerror="this.style.display='none'">
+            <div class="proj-fallback g2">
+              <div class="pf-icon">🤖</div>
+              <div class="pf-name">DeployMate One Click Deployment Platforn</div>
+            </div>
+          </div>
+          <div class="proj-overlay">
+            <div class="proj-ov-title">Website Hosting Platform</div>
+            <div class="proj-link-row">
+              <a href="#" class="proj-link live" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/amarp123/DeployMate" class="proj-link github" target="_blank"><i
+                  class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-info-top">
+              <h4>Website Hosting Platform</h4>
+              <span class="proj-badge b-ai">FULL STACK</span>
+            </div>
+            <p>One Click Deployment Platform for Static Websites and Web Applications</p>
+            <div class="proj-tech">
+              <span class="tech-chip">React</span><span class="tech-chip">OpenAI</span><span
+                class="tech-chip">fastApi</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="proj-card" data-cat="web">
+          <div class="proj-thumb">
+            <img src="assets/images/Screenshot (278).png" alt="Analytics Dashboard" onerror="this.style.display='none'">
+            <div class="proj-fallback g3">
+              <div class="pf-icon">📊</div>
+              <div class="pf-name">CodeIs technical Club</div>
+            </div>
+          </div>
+          <div class="proj-overlay">
+            <div class="proj-ov-title">Technical Club Website Host Your Events</div>
+            <div class="proj-link-row">
+              <a href="#" class="proj-link live" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/amarp123/CODEIS-" class="proj-link github" target="_blank"><i
+                  class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-info-top">
+              <h4>CodeIs Technical Club</h4>
+              <span class="proj-badge b-web">FULL STACK</span>
+            </div>
+            <p>Connect with Young mind Developers</p>
+            <div class="proj-tech">
+              <span class="tech-chip">React</span><span class="tech-chip">node.js</span><span
+                class="tech-chip">mongodb</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="proj-card" data-cat="ai">
+          <div class="proj-thumb">
+            <img src="assets/images/image copy.png" alt="Resume Analyzer AI" onerror="this.style.display='none'">
+            <div class="proj-fallback g7">
+              <div class="pf-icon">🧠</div>
+              <div class="pf-name">Resume Analyzer AI</div>
+            </div>
+          </div>
+          <div class="proj-overlay">
+            <div class="proj-ov-title">Resume Analyzer AI Tool</div>
+            <div class="proj-link-row">
+              <a href="#" class="proj-link live" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/amarp123/Resume-Analyser" class="proj-link github" target="_blank"><i
+                  class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-info-top">
+              <h4>Resume Analyzer AI Tool</h4>
+              <span class="proj-badge b-ai">AI / ML</span>
+            </div>
+            <p>Upload a PDF resume — get instant AI feedback, ATS score, skill gap analysis and improvement tips.</p>
+            <div class="proj-tech">
+              <span class="tech-chip">React</span><span class="tech-chip">FastAPI</span><span
+                class="tech-chip">OpenAI</span><span class="tech-chip">PyPDF2</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="proj-card" data-cat="fs">
+          <div class="proj-thumb">
+            <img src="assets/images/image.png" alt="Task Manager" onerror="this.style.display='none'">
+            <div class="proj-fallback g4">
+              <div class="pf-icon">📝</div>
+              <div class="pf-name">Invision Hackathon Website</div>
+            </div>
+          </div>
+          <div class="proj-overlay">
+            <div class="proj-ov-title">Invision Hackathon Website</div>
+            <div class="proj-link-row">
+              <a href="https://invision-hackathon-2025.vercel.app/" class="proj-link live" target="_blank"><i
+                  class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/amarp123/invISion-HACKATHON---2025" class="proj-link github"
+                target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-info-top">
+              <h4>Invision Hackathon Website</h4>
+              <span class="proj-badge b-fs">FULL STACK</span>
+            </div>
+            <p>Invision is a hackathon website for technical students </p>
+            <div class="proj-tech">
+              <span class="tech-chip">React</span><span class="tech-chip">Redux</span><span
+                class="tech-chip">Express</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="proj-card" data-cat="web">
+          <div class="proj-thumb">
+            <img src="assets/images/image copy 2.png" alt="Weather App" onerror="this.style.display='none'">
+            <div class="proj-fallback g5">
+              <div class="pf-icon">🌤️</div>
+              <div class="pf-name">AyushmanClaim Ai Powered Ayushman Insurance Claim Agent </div>
+            </div>
+          </div>
+          <div class="proj-overlay">
+            <div class="proj-ov-title">AyushmanClaim Ai Powered Ayushman Insurance Claim Agent </div>
+            <div class="proj-link-row">
+              <a href="#" class="proj-link live" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              <a href="https://github.com/amarp123/Claimy" class="proj-link github" target="_blank"><i
+                  class="fab fa-github"></i> GitHub</a>
+            </div>
+          </div>
+          <div class="proj-info">
+            <div class="proj-info-top">
+              <h4>AyushmanClaim </h4>
+              <span class="proj-badge b-web">AI/ML</span>
+            </div>
+            <p>AyushmanClaim is a AI-powered platform that helps Ayushman Insurance beneficiaries to get their claims
+              processed quickly and efficiently. </p>
+            <div class="proj-tech">
+              <span class="tech-chip">React</span><span class="tech-chip">FastAPI</span><span
+                class="tech-chip">MongoDB</span><span class="tech-chip">RAG</span>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div><!-- /projects-grid -->
+    </section>
+
+  </div><!-- /container -->
+
+  <!-- ═══ ACHIEVEMENTS ═══ -->
+  <section class="achievements-section" id="achievements">
+    <div class="container">
+      <div class="achievements-header">
+        <div class="section-eyebrow">My Wins</div>
+        <h2 class="section-title">Achievements &amp; <span>Highlights</span></h2>
+        <p class="section-sub">Moments that shaped my journey — hackathons, certifications, events &amp; proud milestones.</p>
+      </div>
+    </div>
+
+    <!-- Marquee strip -->
+    <div class="marquee-wrapper">
+      <div class="marquee-track" id="marqueeTrack">
+
+        <div class="ach-card">
+          <img src="assets/images/IMG-20250411-WA0001.jpg" alt="Achievement 1" onerror="this.style.display='none'">
+          <div class="ach-caption">🏆 Hackathon Winner</div>
+        </div>
+        <div class="ach-card">
+          <img src="assets/images/WhatsApp Image 2025-05-25 at 19.51.23_da8d01ee.jpg" alt="Achievement 2" onerror="this.style.display='none'">
+          <div class="ach-caption">📜 Full Stack Certification</div>
+        </div>
+        <div class="ach-card">
+          <img src="assets/images/WhatsApp Image 2025-09-20 at 18.24.06_2950e4ad.jpg" alt="Achievement 3" onerror="this.style.display='none'">
+          <div class="ach-caption">🎤 Tech Talk — AI Summit</div>
+        </div>
+        <div class="ach-card">
+          <img src="assets/images/WhatsApp Image 2026-03-12 at 3.09.34 PM.jpeg" alt="Achievement 4" onerror="this.style.display='none'">
+          <div class="ach-caption">🌟 Best Project Award</div>
+        </div>
+        <div class="ach-card">
+          <img src="assets/images/WhatsApp Image 2026-03-12 at 3.09.33 PM.jpeg" alt="Achievement 5" onerror="this.style.display='none'">
+          <div class="ach-caption">💻 Open Source Contributor</div>
+        </div>
+        <div class="ach-card">
+          <img src="assets/images/fav.jpg" alt="Achievement 6" onerror="this.style.display='none'">
+          <div class="ach-caption">🚀 Product Launch</div>
+        </div>
+
+      </div><!-- /marquee-track -->
+    </div><!-- /marquee-wrapper -->
+  </section>
+
+  <script>
+    /* Auto-clone marquee cards for seamless infinite loop */
+    (function() {
+      var track = document.getElementById('marqueeTrack');
+      if (!track) return;
+      var origCards = Array.from(track.children);
+      origCards.forEach(function(card) {
+        var clone = card.cloneNode(true);
+        track.appendChild(clone);
+      });
+    })();
+  </script>
+
+  <!-- CONTACT -->
+  <div class="container">
+    <section class="contact-section" id="contact">
+      <div class="contact-left">
+        <div class="section-eyebrow" style="color:rgba(255,255,255,0.55);margin-bottom:8px;">Get In Touch</div>
+        <h2>Let's Work <span>Together</span> on Something Great</h2>
+        <p>Have a project in mind? Looking for a developer who cares about both code quality and design? I'd love to
+          hear from you — I respond within 24 hours.</p>
+        <div class="ci-item">
+          <div class="ci-icon">📧</div><span>amarpujari800@gmail.com</span>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">📱</div><span>+91 8050760620</span>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">📍</div><span>India — Open to Remote Worldwide</span>
+        </div>
+        <div class="contact-socials">
+          <button href="https://github.com/amarp123" class="soc-btn"><i class="fab fa-github"></i></button>
+          <button href="https://www.linkedin.com/in/amar-pujari-b82a4b25a/" class="soc-btn"><i
+              class="fab fa-linkedin-in"></i></button>
+
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label>YOUR NAME</label>
+            <input type="text" placeholder="John Doe" />
+          </div>
+          <div class="form-group">
+            <label>EMAIL ADDRESS</label>
+            <input type="email" placeholder="john@example.com" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>SUBJECT</label>
+          <input type="text" placeholder="Project collaboration / Job opportunity..." />
+        </div>
+        <div class="form-group">
+          <label>MESSAGE</label>
+          <textarea placeholder="Tell me about your project, timeline and budget..."></textarea>
+        </div>
+        <button class="btn-send" id="sendBtn"><i class="fas fa-paper-plane"></i> Send Message</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-logo">amar.dev</div>
+        <div class="footer-links">
+          <a href="#hero">Home</a>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="foot-soc">
+          <button class="fs-btn"><i class="fab fa-github"></i></button>
+          <button class="fs-btn"><i class="fab fa-linkedin-in"></i></button>
+          <button class="fs-btn"><i class="fab fa-twitter"></i></button>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <span>© 2026 Amar Pujari. All rights reserved.</span>
+        <span>Designed &amp; Built with ❤️ by Amar</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script>
+    // Scroll to top visibility
+    window.addEventListener('scroll', () => {
+      document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+    });
+
+    // Active nav on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navAs = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 130) cur = s.id; });
+      navAs.forEach(a => { a.classList.toggle('active', a.getAttribute('href') === '#' + cur); });
+    });
+
+    // Project filter with animation
+    function filterProjects(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('#projectsGrid .proj-card').forEach(card => {
+        const show = cat === 'all' || card.dataset.cat === cat;
+        if (show) {
+          card.style.display = 'block';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          requestAnimationFrame(() => {
+            card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          });
+        } else {
+          card.style.transition = 'opacity 0.2s ease';
+          card.style.opacity = '0';
+          setTimeout(() => { card.style.display = 'none'; }, 200);
+        }
+      });
+    }
+
+    // Scroll-in animation for cards
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.svc-card, .svc-featured, .proj-card, .process-step').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      obs.observe(el);
+    });
+
+    // Contact send feedback
+    document.getElementById('sendBtn').addEventListener('click', function () {
+      this.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+      this.style.background = '#16a34a';
+      setTimeout(() => {
+        this.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        this.style.background = '';
+      }, 3000);
+    });
+
+    // Photo error fallback — show styled div if image doesn't load
+    const heroPhoto = document.getElementById('heroPhoto');
+    if (heroPhoto) {
+      heroPhoto.onerror = function () {
+        const wrap = this.parentElement;
+        this.remove();
+        wrap.innerHTML = `
+        <div class="photo-fallback">
+          <div style="font-size:40px;">📷</div>
+          <div>Replace with your photo</div>
+          <small style="font-size:11px;opacity:0.6;font-weight:400;">src="assets/images/your-photo.png"</small>
+        </div>`;
+      };
+    }
+  </script>
+</body>
+
+</html>
